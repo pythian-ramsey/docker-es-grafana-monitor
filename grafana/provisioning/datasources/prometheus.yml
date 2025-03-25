@@ -8,3 +8,4 @@ datasources:
     type: prometheus
     url: http://prometheus:9090
     orgId: 1
+    uid: "PBFE396EC0B189D67"
