@@ -10,7 +10,7 @@ alerting:
     timeout: 10s
     api_version: v1
 scrape_configs:
-- job_name: elastic
+- job_name: elastic1
   honor_timestamps: true
   scrape_interval: 60s
   scrape_timeout: 30s
@@ -18,4 +18,13 @@ scrape_configs:
   scheme: http
   static_configs:
   - targets:
-    - esexporter:9114
+    - esexporter1:9114
+- job_name: elastic2
+  honor_timestamps: true
+  scrape_interval: 60s
+  scrape_timeout: 30s
+  metrics_path: /metrics
+  scheme: http
+  static_configs:
+  - targets:
+    - esexporter2:9115

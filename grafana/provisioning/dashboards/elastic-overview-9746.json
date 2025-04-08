@@ -19,16 +19,124 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 4,
+  "id": 3,
   "links": [],
   "panels": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFE396EC0B189D67"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 97,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "11.5.2",
+      "targets": [
+        {
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "rate(elasticsearch_index_stats_search_query_time_seconds_total{cluster=\"$cluster\"}[5m])",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Index Search Query Time ",
+      "transformations": [
+        {
+          "id": "labelsToFields",
+          "options": {
+            "keepLabels": [
+              "index"
+            ],
+            "mode": "columns",
+            "valueLabel": "index"
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
     {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 8
       },
       "id": 90,
       "panels": [],
@@ -102,7 +210,7 @@
         "h": 3,
         "w": 12,
         "x": 0,
-        "y": 1
+        "y": 9
       },
       "id": 92,
       "maxDataPoints": 100,
@@ -183,7 +291,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 1
+        "y": 9
       },
       "id": 8,
       "maxDataPoints": 100,
@@ -266,7 +374,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 1
+        "y": 9
       },
       "id": 94,
       "maxDataPoints": 100,
@@ -346,7 +454,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 1
+        "y": 9
       },
       "id": 96,
       "maxDataPoints": 100,
@@ -389,7 +497,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 4
+        "y": 12
       },
       "id": 76,
       "panels": [],
@@ -439,7 +547,7 @@
         "h": 3,
         "w": 4,
         "x": 0,
-        "y": 5
+        "y": 13
       },
       "id": 78,
       "maxDataPoints": 100,
@@ -519,7 +627,7 @@
         "h": 3,
         "w": 4,
         "x": 4,
-        "y": 5
+        "y": 13
       },
       "id": 80,
       "maxDataPoints": 100,
@@ -599,7 +707,7 @@
         "h": 3,
         "w": 4,
         "x": 8,
-        "y": 5
+        "y": 13
       },
       "id": 82,
       "maxDataPoints": 100,
@@ -679,7 +787,7 @@
         "h": 3,
         "w": 4,
         "x": 12,
-        "y": 5
+        "y": 13
       },
       "id": 84,
       "maxDataPoints": 100,
@@ -759,7 +867,7 @@
         "h": 3,
         "w": 4,
         "x": 16,
-        "y": 5
+        "y": 13
       },
       "id": 86,
       "maxDataPoints": 100,
@@ -839,7 +947,7 @@
         "h": 3,
         "w": 4,
         "x": 20,
-        "y": 5
+        "y": 13
       },
       "id": 88,
       "maxDataPoints": 100,
@@ -882,7 +990,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 8
+        "y": 16
       },
       "id": 70,
       "panels": [],
@@ -954,7 +1062,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 9
+        "y": 17
       },
       "id": 3,
       "options": {
@@ -1057,7 +1165,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 9
+        "y": 17
       },
       "id": 4,
       "options": {
@@ -1160,7 +1268,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 26
       },
       "id": 72,
       "options": {
@@ -1263,7 +1371,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 18
+        "y": 26
       },
       "id": 74,
       "options": {
@@ -1365,7 +1473,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 35
       },
       "id": 64,
       "options": {
@@ -1404,7 +1512,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 43
       },
       "id": 68,
       "panels": [],
@@ -1453,7 +1561,7 @@
         "h": 3,
         "w": 8,
         "x": 0,
-        "y": 36
+        "y": 44
       },
       "id": 12,
       "maxDataPoints": 100,
@@ -1533,7 +1641,7 @@
         "h": 3,
         "w": 8,
         "x": 8,
-        "y": 36
+        "y": 44
       },
       "id": 13,
       "maxDataPoints": 100,
@@ -1612,7 +1720,7 @@
         "h": 3,
         "w": 8,
         "x": 16,
-        "y": 36
+        "y": 44
       },
       "id": 14,
       "maxDataPoints": 100,
@@ -1713,7 +1821,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 39
+        "y": 47
       },
       "id": 1,
       "options": {
@@ -1811,7 +1919,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 39
+        "y": 47
       },
       "id": 66,
       "options": {
@@ -1909,7 +2017,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 47
+        "y": 55
       },
       "id": 57,
       "options": {
@@ -2026,7 +2134,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 47
+        "y": 55
       },
       "id": 28,
       "options": {
@@ -2129,7 +2237,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 56
+        "y": 64
       },
       "id": 5,
       "options": {
@@ -2242,7 +2350,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 56
+        "y": 64
       },
       "id": 65,
       "options": {
@@ -2302,10 +2410,10 @@
       {
         "current": {
           "text": [
-            "All"
+            "598916149727:kvcore-contacts-prod"
           ],
           "value": [
-            "$__all"
+            "598916149727:kvcore-contacts-prod"
           ]
         },
         "datasource": "$server",
@@ -2322,13 +2430,13 @@
     ]
   },
   "time": {
-    "from": "now-12h",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "utc",
-  "title": "ElasticSearch33",
+  "title": "ElasticSearch Overview 9746",
   "uid": "n_nxrE_mk",
-  "version": 1,
+  "version": 3,
   "weekStart": ""
 }

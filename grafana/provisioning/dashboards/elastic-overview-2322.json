@@ -4063,8 +4063,8 @@
       },
       {
         "current": {
-          "text": "esexporter:9114",
-          "value": "esexporter:9114"
+          "text": "",
+          "value": ""
         },
         "datasource": "PBFE396EC0B189D67",
         "includeAll": false,
@@ -4085,7 +4085,7 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "ElasticSearch",
+  "title": "ElasticSearch Overview 2322",
   "uid": "begu26kwj40sgb",
   "version": 2,
   "weekStart": ""

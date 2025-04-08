@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./prometheus:/etc/prometheus
-      - prom_data:/prometheus
+      - ./prom_data:/prometheus
   grafana:
     image: grafana/grafana
     container_name: grafana
@@ -24,13 +24,22 @@ services:
       #- ./grafana:/etc/grafana/provisioning/datasources
       - ./grafana/provisioning:/usr/share/grafana/conf/provisioning
       #- ./grafana/provisioning/datasources:/usr/share/grafana/conf/provisioning/datasources
-  esexporter:
+  esexporter1:
     image: quay.io/prometheuscommunity/elasticsearch-exporter:latest
     command:
-     - '--es.uri=$ES_ENDPOINT'
+     - '--es.uri=$ES_ENDPOINT1'
      - '--es.indices'
     restart: always
     ports:
     - "9114:9114"
+  esexporter2:
+    image: quay.io/prometheuscommunity/elasticsearch-exporter:latest
+    command:
+     - '--es.uri=$ES_ENDPOINT2'
+     - '--es.indices'
+     - '--web.listen-address=:9115'
+    restart: always
+    ports:
+    - "9115:9115"
 volumes:
   prom_data:
